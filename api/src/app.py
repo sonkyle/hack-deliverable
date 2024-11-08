@@ -51,7 +51,7 @@ def post_message(name: str = Form(), message: str = Form()) -> RedirectResponse:
 @app.get("/quote")
 async def get_quotes(age: int = None) -> list[Quote]:
     if age is None:
-        return database["quotes"]
+        return database["quotes"]                #if get_quotes is called with no argument, you receive all quotes
     now = datetime.now()
     quoteExpiry = now - timedelta(days = age)
     quoteList =  []
