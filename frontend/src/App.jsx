@@ -5,7 +5,7 @@ function App() {
 	return (
 		<div className="App">
 			{/* TODO: include an icon for the quote book */}
-			<img src={quotebook} alt="quotebook logo goes here" />
+			<img className="logo" src={quotebook} alt="quotebook logo goes here" />
 			<h1>Hack at UCI Tech Deliverable</h1>
 			
 			<h2>Submit a quote</h2>
