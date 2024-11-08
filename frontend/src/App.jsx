@@ -1,11 +1,13 @@
 import "./App.css";
+import quotebook from './quotebook.png';
 
 function App() {
 	return (
 		<div className="App">
 			{/* TODO: include an icon for the quote book */}
+			<img src={quotebook} alt="quotebook logo goes here" />
 			<h1>Hack at UCI Tech Deliverable</h1>
-
+			
 			<h2>Submit a quote</h2>
 			{/* TODO: implement custom form submission logic to not refresh the page */}
 			<form action="/api/quote" method="post">
