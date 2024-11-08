@@ -3,6 +3,14 @@
   height: 75px;
 }
 
+.name{
+  margin-right: 10px;
+}
+
+.quotebox {
+  margin-right: 8px;
+}
+
 /* Dropdown Button */
 .dropbtn {
   position: relative;
