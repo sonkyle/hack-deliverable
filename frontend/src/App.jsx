@@ -1,8 +1,30 @@
+import React, { useState } from 'react';
 import "./App.css";
+import "./Quote.jsx";
 import quotebook from "./quotebook.png";
 
 function App() {
-  return (
+	const [name, setName] = useState('');
+	const [message, setMessage] = useState('');	
+	const [age, setAge] = useState('');
+	const [quotes, setQuotes] = useState([]);
+  
+	useEffect(() => { fetchQuotes() }, []);
+	
+	async function handleSubmit(){
+		preventDefault();
+		const response = await fetch('/api/quote', { method: 'POST'});
+
+	}
+
+	async function fetchQuotes() {
+		const response = await fetch('./database.json');
+		const data = await response.json();
+		setQuotes(data);
+	}
+	
+	return (
+
     <div className="App">
       {/* TODO: include an icon for the quote book */}
       <img className="logo" src={quotebook} alt="quotebook logo goes here" />
@@ -38,6 +60,7 @@ function App() {
       </div>
 
       <div className="messages"></div>
+
     </div>
   );
 }
